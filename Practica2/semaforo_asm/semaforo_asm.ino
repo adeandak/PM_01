@@ -45,8 +45,6 @@ void loop() {
 
     "cbi 0x05, 6 \n\t"
     "cbi 0x05, 4 \n\t"
-
-    "call segundo \n\t"
     
     "jmp inicio \n\t"
 
@@ -57,11 +55,11 @@ void loop() {
     
     "mediosegundo: \n\t"
     "LDI r22, 40 \n\t"
-    "LOOP_3: \n\t"
+    "LOOP_3: \n\t" //loop externo cuenta 40 con 11 instrucciones
     "LDI r21, 255 \n\t"
-    "LOOP_2: \n\t"
+    "LOOP_2: \n\t" //loop intermedio cuenta 255 con 7 instrucciones
     "LDI r20, 255 \n\t"
-    "LOOP_1: \n\t"
+    "LOOP_1: \n\t" //loop mas interno cuenta 255 con 3 instrucciones
     "DEC r20 \n\t"
     "BRNE LOOP_1 \n\t"
     "DEC r21 \n\t"
